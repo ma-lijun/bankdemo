@@ -132,7 +132,7 @@ var src5='tuijin-p5.html';
 		var opt = {
 			title: "新增",
 			width: 600,
-			height: 400,
+			height: 500,
 			modal: true,
 			collapsible: false,
 			minimizable: false,
@@ -152,7 +152,7 @@ function userEdit(src) {
 		var opt = {
 			title: "修改",
 			width: 600,
-			height: 400,
+			height: 500,
 			modal: true,
 			collapsible: false,
 			minimizable: false,
@@ -184,7 +184,7 @@ function userEdit2(src) {
         var opt = {
             title: "阶段推进",
             width: 600,
-            height: 400,
+            height: 500,
             modal: true,
             collapsible: false,
             minimizable: false,

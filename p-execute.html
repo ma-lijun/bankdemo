@@ -25,48 +25,30 @@
     <div class="north container-fluid" data-options="region:'north',border:false" style="height:40px;background:#efefef;overflow: hidden;">
         <form id="user_searchForm" method="post" class="row user_searchForm">
             <div class="inp-wrap col-sm-3 col-md-3 form-group-sm" >
-                <span>项目编号:</span> <input class="easyui-textbox" label="" labelPosition="left"  >
+                <span>编号:</span> <input class="easyui-textbox" label="" labelPosition="left"  >
             </div>
             <div class="inp-wrap  col-sm-3 col-md-3" >
-                <span>项目名称:</span><input class="easyui-textbox" label="" labelPosition="left"  >
+                <span>名称:</span><input class="easyui-textbox" label="" labelPosition="left"  >
             </div>
             <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
-                <select class="easyui-combobox col-md-2" label="项目类别:" labelPosition="left"  style="width: 95%">
-                    <option value="中国移动">非外包</option>
-                    <option value="中国电信">外包项目</option>
+                <select class="easyui-combobox col-md-2" label="类别:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">类别一</option>
+                    <option value="中国电信">类别二</option>
                 </select>
             </div>
-            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
+            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn">
                 <!--<input class="easyui-textbox" label="用户姓名:" labelPosition="left" style="width: 95%"  >-->
-                <select class="easyui-combobox col-md-2" label="项目进度:" labelPosition="left"  style="width: 95%">
-                    <option value="中国移动">开工</option>
-                    <option value="中国电信">完工</option>
-                    <option value="中国联通">竣工</option>
-                    <option value="中国铁塔">决算</option>
+                <select class="easyui-combobox col-md-2" label="采购进度:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">招标</option>
+                    <option value="中国电信">开标</option>
+                    <option value="中国联通">执行</option>
+                    <option value="中国铁塔">评价</option>
                 </select>
             </div>
             <div class="inp-wrap col-sm-3 col-md-3">
                 <span>项目经理:</span><input class="easyui-textbox" label="" labelPosition="left">
             </div>
 
-            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
-                <!--<input class="easyui-textbox" label="用户姓名:" labelPosition="left" style="width: 95%"  >-->
-                <select class="easyui-combobox col-md-2" label="运营商:" labelPosition="left"  style="width: 95%">
-                    <option value="中国移动">中国移动</option>
-                    <option value="中国电信">中国电信</option>
-                    <option value="中国联通">中国联通</option>
-                    <option value="中国铁塔">中国铁塔</option>
-                    <option value="中国有线">中国有线</option>
-                </select>
-            </div>
-            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
-                <select class="easyui-combobox col-md-2" label="施工队:" labelPosition="left"  style="width: 95%">
-                    <option value="中国移动">施工队A</option>
-                    <option value="中国电信">施工队B</option>
-                    <option value="中国联通">施工队C</option>
-
-                </select>
-            </div>
             <div class=" inp-wrap col-sm-6 col-md-6 s-con-dn ">
                 <table class="date-tab">
                     <tr>
