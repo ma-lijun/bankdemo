@@ -1,0 +1,116 @@
+{"total": 28,
+	"rows": [
+		{
+			"productid": "20170110",
+			"productname": "2017010201",
+			"unitcost": "3.2万",
+          "execute":"招标",
+			"status": "类别一",
+			"listprice": 36.50,
+			"attr1": "综合管理部",
+           "attr2":"2017年一季度办公材料采购",
+			"stage":1,
+			"itemid": "EST-1"
+
+		}, {
+			"productid": "20170112",
+			"productname": "2017010202",
+			"unitcost": "1.6万",
+			"status": "类别一",
+			"stage":3,
+        "execute":"执行",
+			"listprice": 18.50,
+        "attr2":"2017年一季度办公材料采购",
+			"attr1": "综合管理部",
+			"itemid": "EST-10"
+		}, {
+			"productid": "20170316",
+			"productname": "2017031102",
+			"unitcost": "2.01万",
+			"status": "集中采购",
+        "execute":"开标",
+			"stage":2,
+        "attr2":"2017年一季度集中采购",
+			"listprice": 38.50,
+			"attr1": "综合管理部",
+			"itemid": "EST-11"
+		}, {
+			"productid": "20170317",
+			"productname": "2017031103",
+			"unitcost": "6.88万",
+			"status": "办公材料",
+        "attr2":"2017年一季度办公材料采购",
+			"listprice": 26.50,
+        "execute":"招标",
+			"stage":1,
+			"attr1": "综合管理部",
+			"itemid": "EST-12"
+		}, {
+			"productid": "20170426",
+			"productname": "2017042001",
+			"unitcost": "3.0135万",
+			"status": "类别一",
+        "attr2":"2017年一季度集中采购",
+        "execute":"开标",
+			"stage":2,
+			"listprice": 35.50,
+			"attr1": "外协部",
+			"itemid": "EST-13"
+		}, {
+			"productid": "20170505",
+			"productname": "2017050122",
+			"unitcost": "0.9841万",
+			"status": "类别一",
+			"listprice": 158.50,
+			"attr1": "外协部",
+        "execute":"评价",
+			"stage":4,
+        "attr2":"2017年一季度集中采购",
+			"itemid": "EST-14"
+		}, {
+			"productid": "20170520",
+			"productname": "2017051926",
+			"unitcost": "2.013万",
+			"status": "类别一",
+			"listprice": 83.50,
+        "execute":"执行",
+			"stage":3,
+        "attr2":"2017年一季度集中采购",
+			"attr1": "内勤部",
+			"itemid": "EST-15"
+		}, {
+			"productid": "20170524",
+			"productname": "2017051930",
+			"unitcost": "4.6万",
+			"status": "类别一",
+			"listprice": 23.50,
+        "attr2":"2017年五月办公材料采购",
+			"attr1": "综合管理部",
+        "execute":"招标",
+			"stage":1,
+			"itemid": "EST-16"
+		}, {
+			"productid": "20170609",
+			"productname": "2017060103",
+			"unitcost": "1.53万",
+			"status": "类别一",
+			"listprice": 89.50,
+        "attr2":"2017年五月办公采购",
+        "execute":"评价",
+			"stage":4,
+			"attr1": "综合管理部",
+			"itemid": "EST-17"
+		}, {
+			"productid": "20170606",
+			"productname": "2017060219",
+			"unitcost": "2.01万",
+			"status": "类别一",
+        "execute":"待招标",
+			"stage":1,
+        "attr2":"2017年五月办公采购",
+			"listprice": 63.50,
+			"attr1": "外协部",
+			"itemid": "EST-18"
+		}
+	]
+}

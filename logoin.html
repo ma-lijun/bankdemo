@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+
+    <title>中国人民银行洛阳支行会计核算系统</title>
+
+    <link href="css/style.css" rel="stylesheet" />
+
+    <!--<script>-->
+
+        <!--$(function () {-->
+            <!--$("#btlogin").click(function () {-->
+                <!--var txtaccount = $("#txtaccount").val();-->
+                <!--var txtpassword = $("#txtpassword").val();-->
+                <!--if (txtaccount == "") {-->
+                    <!--$("#txtaccount").focus();-->
+                    <!--formMessage('登录账户不能为空', 'warning');-->
+                    <!--return false;-->
+                <!--} else if (txtpassword == "") {-->
+                    <!--$("#txtpassword").focus();-->
+                    <!--formMessage('登录密码不能为空', 'warning');-->
+                    <!--return false;-->
+                <!--} else {-->
+                    <!--formMessage('正在登录...', 'succeed');-->
+                    <!--window.setTimeout(function () {-->
+                        <!--var postData = {-->
+                            <!--Account: escape(txtaccount),-->
+                            <!--Password: escape($.md5(txtpassword))-->
+                        <!--}-->
+                        <!--getAjax('/Login/CheckLogin', postData, function (rs) {-->
+                            <!--if (parseInt(rs) == -1) {-->
+                                <!--$("#txtaccount").focus();-->
+                                <!--formMessage('登录账户不存在', 'error');-->
+                            <!--} else if (parseInt(rs) == 2) {-->
+                                <!--$("#txtaccount").focus();-->
+                                <!--formMessage('登录账户被系统锁定', 'error');-->
+                            <!--} else if (parseInt(rs) == 4) {-->
+                                <!--$("#txtaccount").focus();-->
+                                <!--$("#txtpassword").val("");-->
+                                <!--formMessage('登录密码错误', 'error');-->
+                            <!--} else if (parseInt(rs) == 3) {-->
+                                <!--formMessage('登录验证成功,正在跳转首页', 'succeed');-->
+                                <!--setInterval(Load, 1000);-->
+                            <!--} else {-->
+                                <!--alert(rs);-->
+                            <!--}-->
+                        <!--});-->
+                    <!--}, 500);-->
+                <!--}-->
+            <!--})-->
+        <!--})-->
+        <!--//登录加载-->
+        <!--function Load() {-->
+            <!--var Index = $.cookie('UItheme');-->
+            <!--if (Index) {-->
+                <!--window.location.href = '/Home/' + Index;-->
+            <!--} else {-->
+                <!--window.location.href = '/Home/AccordionIndex';-->
+            <!--}-->
+            <!--return false;-->
+        <!--}-->
+        <!--//提示信息-->
+        <!--function formMessage(msg, type) {-->
+            <!--$('.form-message').html('');-->
+            <!--$('.form-message').append('<div class="form-' + type + '-text">' + msg + '</div>');-->
+        <!--}-->
+    <!--</script>-->
+</head>
+<body class="Loginbody login-m">
+<div class="wp">
+    <div class="logo">
+        <!--<img src="/Content/Images/loginlogo.png" />-->
+        <h2>中国人民银行洛阳支行会计核算系统</h2>
+        <!--<p style="text-transform:uppercase;">Luoyang jing huan tong xin guan li xi tong</p>-->
+    </div>
+    <div class="content">
+        <!--左侧背景图片-->
+        <div class="img-bj">
+            <img src="img/login1.jpg" alt="">
+        </div>
+        <!--左侧背景图片 end-->
+        <!--右侧表单-->
+        <div class="Loginform">
+            <div class="form-tit">
+                <span>请登录</span>
+            </div>
+            <div class="form-bd">
+
+                <form  role="form">
+                    <div class="form-account  form-group-lg input-group">
+                        <span class="input-group-addon "><i class="glyphicon glyphicon-user"></i>账户：</span>
+                        <input  type="text" class="form-control" id="txtaccount" />
+
+                    </div>
+                    <div class="form-password form-group-lg input-group">
+                        <span class="input-group-addon"><i class=" 	glyphicon glyphicon-lock"></i>密码：</span>
+
+                        <input type="text" class="form-control" id="password txtpassword"  />
+                    </div>
+                    <div class="form-message">
+                        <div class="checkbox-login" style="float:left">
+                            <label>
+                                <input type="checkbox">记住密码
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <a href="index.html" target="_self" id="btlogin" class="btn btn1 btn-primary">登录</a>
+                        <a href=""class="btn btn2 btn-primary">重置</a>
+                        <!--<button type="reset" ></button>-->
+
+                    </div>
+                </form>
+
+            </div>
+
+        </div>
+        <!--右侧表单 end-->
+    </div>
+    <div style="text-align: center; margin: 20px; font-family: Microsoft Yahei; color: #fff; margin: auto; width: 983px; padding-top: 30px;">
+        <p>适用浏览器：IE9以上、360、FireFox、Chrome</p>
+    </div>
+    <div class="copyright">
+        <span>copyright@2017 中国人民银行洛阳支行会计核算系统</span>&nbsp&nbsp&nbsp by&nbsp&nbsp&nbsp
+        <a href="http://www.shangit.com" target="_blank">洛阳上源科技有限公司 </a>
+    </div>
+</div>
+
+<script type="text/javascript">
+//    检查浏览器是否是ie9以下
+    var Sys = {};
+    var ua = navigator.userAgent.toLowerCase();
+    var s;
+    (s = ua.match(/msie ([\d.]+)/)) ? Sys.ie = s[1] :
+            (s = ua.match(/firefox\/([\d.]+)/)) ? Sys.firefox = s[1] :
+                    (s = ua.match(/chrome\/([\d.]+)/)) ? Sys.chrome = s[1] :
+                            (s = ua.match(/opera.([\d.]+)/)) ? Sys.opera = s[1] :
+                                    (s = ua.match(/version\/([\d.]+).*safari/)) ? Sys.safari = s[1] : 0;
+    //以下进行测试
+    if (Sys.ie) document.write('IE: ' + Sys.ie);
+    var str="您的浏览器版本是IE"+Sys.ie+"请切换至极速模式，或者使用谷歌或火狐浏览器！";
+    if (Sys.ie<12){
+        alert(str);
+    };
+</script>
+</body>
+</html>
+
+

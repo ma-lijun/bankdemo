@@ -1,0 +1,186 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>项目执行</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/demo/demo.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery/jQuery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/layer-v3/layer/layer.js"></script>
+    <script type="text/javascript" src="js/syUtil.js"></script>
+    <script type="text/javascript" src="js/myjs.js"></script>
+    <script src="js/myjs.js"></script>
+
+</head>
+<body >
+<div id="dlg"></div>
+
+<div id="cc" class="easyui-layout" data-options="fit:true">
+    <div class="north container-fluid" data-options="region:'north',border:false" style="height:40px;background:#efefef;overflow: hidden;">
+        <form id="user_searchForm" method="post" class="row user_searchForm">
+            <div class="inp-wrap col-sm-3 col-md-3 form-group-sm" >
+                <span>项目编号:</span> <input class="easyui-textbox" label="" labelPosition="left"  >
+            </div>
+            <div class="inp-wrap  col-sm-3 col-md-3" >
+                <span>项目名称:</span><input class="easyui-textbox" label="" labelPosition="left"  >
+            </div>
+            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
+                <select class="easyui-combobox col-md-2" label="项目类别:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">非外包</option>
+                    <option value="中国电信">外包项目</option>
+                </select>
+            </div>
+            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
+                <!--<input class="easyui-textbox" label="用户姓名:" labelPosition="left" style="width: 95%"  >-->
+                <select class="easyui-combobox col-md-2" label="项目进度:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">开工</option>
+                    <option value="中国电信">完工</option>
+                    <option value="中国联通">竣工</option>
+                    <option value="中国铁塔">决算</option>
+                </select>
+            </div>
+            <div class="inp-wrap col-sm-3 col-md-3">
+                <span>项目经理:</span><input class="easyui-textbox" label="" labelPosition="left">
+            </div>
+
+            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
+                <!--<input class="easyui-textbox" label="用户姓名:" labelPosition="left" style="width: 95%"  >-->
+                <select class="easyui-combobox col-md-2" label="运营商:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">中国移动</option>
+                    <option value="中国电信">中国电信</option>
+                    <option value="中国联通">中国联通</option>
+                    <option value="中国铁塔">中国铁塔</option>
+                    <option value="中国有线">中国有线</option>
+                </select>
+            </div>
+            <div class="inp-wrap col-sm-3 col-md-3 s-con-dn" >
+                <select class="easyui-combobox col-md-2" label="施工队:" labelPosition="left"  style="width: 95%">
+                    <option value="中国移动">施工队A</option>
+                    <option value="中国电信">施工队B</option>
+                    <option value="中国联通">施工队C</option>
+
+                </select>
+            </div>
+            <div class=" inp-wrap col-sm-6 col-md-6 s-con-dn ">
+                <table class="date-tab">
+                    <tr>
+                        <td class="first-td">创建日期:</td>
+                        <td>
+                            <input class="easyui-datebox" data-options="sharedCalendar:'#cc2'">
+                        </td>
+                        <td id="date-m"> - </td>
+                        <td>
+                            <input class="easyui-datebox" data-options="sharedCalendar:'#cc2'">
+                        </td>
+                    </tr>
+                </table>
+                <div id="cc2" class="easyui-calendar"></div>
+
+            </div>
+        </form>
+    </div>
+    <!--搜索区域 end-->
+<div  class="center" data-options="region:'center',border:false" style="background:#fafafa;">
+    <div id="toolbar" style="height: auto;background-color: #ffffff;">
+        <div style="padding: 3px; height:35px;">
+            <div style="float:right;font-size:14px;">
+                <button  class="btn btn-primary btn-rounded btn-outline btn-sm " onclick="doSearch()" ><i class="fa fa-search"></i> 查询</button>
+                <button  class="btn btn-primary btn-rounded btn-outline btn-sm "  ><i class="fa fa-refresh"></i> 重置</button>
+                <button id="ser-tab" class="btn btn-primary btn-rounded btn-outline btn-sm " value="高级搜索" >高级搜索</button>
+            </div>
+            <button id="add" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="userAdd(url16)" title="新增"><i class="glyphicon glyphicon-plus"></i> 新增</button>
+            <button id="edit0" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="userEdit(src)" title="修改"><i class="glyphicon glyphicon-pencil"></i> 修改</button>
+            <button id="remove0" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="refresh()" title="删除"><i class="glyphicon glyphicon-remove"></i> 删除</button>
+            <button id="edit" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="userEdit2(src)" title="阶段推进"><i class="glyphicon glyphicon-pencil"></i> 阶段推进</button>
+            <button id="remove" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="saveproject()" title="归档"><i class="glyphicon glyphicon-floppy-saved"></i> 归档</button>
+            <button id="refresh" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="refresh()" title="刷新"><i class="glyphicon glyphicon-repeat"></i> 刷新</button>
+        </div>
+    </div>
+    <table id="user_datagrid" class="easyui-datagrid"
+           data-options="
+    	<!--url: '${pageContext.request.contextPath}/demo/userAction!datagrid.action',-->
+    	fit:true,
+		idField : 'userId',
+		rownumbers:true,
+    	pagination : true,
+		pageSize : 20,
+		pageList : [ 20, 50, 80],
+		sortName : 'userLogin',
+		sortOrder : 'asc',
+		singleSelect: true,
+		nowrap : false,
+    	border:false,
+    	url:'datagrid_data1.json',
+    	toolbar:'#toolbar'">
+        <thead>
+        <tr>
+            <!--<th data-options="field:'itemid',checkbox:true,align:'center'">序号</th>-->
+            <!--<th data-options="field:'productname',width:80,align:'center'">项目编号</th>-->
+            <!--<th data-options="field:'status',width:80,align:'center'">项目类别</th>-->
+            <!--<th data-options="field:'userTel',width:80,align:'center'">项目名称</th>-->
+            <!--<th data-options="field:'attr1',width:80,align:'center'">项目地址</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">运营商</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">施工队</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">项目经理</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">预算金额</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">开工日期</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">计划完工日期</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">施工状态</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">竣工日期</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">项目进度</th>-->
+            <!--<th data-options="field:'unitcost',width:80,align:'center'">备注</th>-->
+
+            <th data-options="field:'itemid',checkbox:true,align:'center'">序号</th>
+            <th data-options="field:'productname',width:100,align:'center'">编号</th>
+            <th data-options="field:'status',width:100,align:'center'">类别</th>
+            <th data-options="field:'attr2',width:200,align:'center'">项目名称</th>
+            <th data-options="field:'attr1',width:100,align:'center'">部门</th>
+            <th data-options="field:'unitcost',width:100,align:'center'">预算</th>
+            <th data-options="field:'productid',width:100,align:'center'">日期</th>
+            <th data-options="field:'execute',width:100,align:'center'">采购进度</th>
+            <th data-options="field:'unitcost0',width:100,align:'center'">备注</th>
+        </tr>
+        </thead>
+    </table>
+
+</div>
+
+</div>
+
+<script>
+    function picture_add(title,url){
+        var index = layer.open({
+            type: 2,
+            title: title,
+            content: url
+        });
+        layer.full(index);
+    }
+
+    function setHeight(num){
+        $('#cc').layout('panel', 'north').panel('resize',{height:num});
+        $('#cc').layout('resize');
+    }
+   $(function(){
+        $('#ser-tab').click(function () {
+            if($(this).text()=='高级搜索'){
+                setHeight(80);
+                $(this).text('简单搜索');
+return false;
+            }else{
+                setHeight(40);
+                $(this).text('高级搜索');
+                $('.s-con-dn').css("display","block");
+                return false;
+            }
+        })
+    })
+</script>
+</body>
+</html>

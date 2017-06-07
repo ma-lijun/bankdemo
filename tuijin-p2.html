@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>项目录入</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/icon.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/demo/demo.css">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery/jQuery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/layer-v3/layer/layer.js"></script>
+</head>
+<script type="text/javascript">
+
+    function getThisIframe() {
+        if (!top) return null;
+        var iframes = parent.document.getElementsByTagName('iframe');
+        if (iframes.length == 0) return null;
+        for (var i = 0; i < iframes.length; ++i) {
+            var iframe = iframes[i];
+            if (iframe.contentWindow == self) {
+                return iframe;
+            }
+        }
+        return null;
+    }
+
+
+    function destroyIframe(iframeEl) {
+        if (!iframeEl) return;
+        iframeEl.parentNode.removeChild(iframeEl);
+        iframeEl = null;
+    };
+
+    function closeIframe(){
+        var iframe = getThisIframe();
+        var thiswin = parent.$(iframe).parent();
+
+        destroyIframe(iframe);
+        thiswin.window('destroy');
+    }
+
+    $(function() {
+        var iframe = getThisIframe();
+        var thiswin = parent.$(iframe).parent();
+        var options = thiswin.window("options");
+        var row = options.row;
+
+        console.info(row);
+        $("#encode").val(row.productname);
+        $("#name").val(row.attr2);
+        $("#type").val(row.status);
+        $("#depart").val(row.attr1);
+        $("#yusuan").val(row.unitcost);
+        $("#date").val(row.productid);
+        $("#jd").val(row.execute);
+        $("#bz").val(row.status);
+
+    });
+
+
+</script>
+</head>
+<body>
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'center',border:false">
+        <form id="useredit_form" method="post">
+            <table class="table table-bordered  table-condensed dataTables-example dataTable no-footer">
+                <tbody>
+                <tr>
+                    <th colspan="4">项目基本信息</th>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">编号:</label></td>
+                    <td class="width-35" ><input id="encode"  type="text" name="deptId" ></td>
+                    <td  class="width-15 active">	<label class="pull-right">名称:</label></td>
+                    <td  class="width-35" ><input id="name"  type="text" name="roleId" /></td>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">类别:</label></td>
+                    <td class="width-35" ><input id="type"  type="text" name="deptId" /></td>
+                    <td  class="width-15 active">	<label class="pull-right">部门:</label></td>
+                    <td  class="width-35" ><input id="depart"  type="text" name="roleId" />
+
+                    </td>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">预算:</label></td>
+                    <td class="width-35" ><input id="yusuan"  type="text" name="deptId" /></td>
+                    <td  class="width-15 active">	<label class="pull-right">日期:</label></td>
+                    <td  class="width-35" ><input id="date"  type="text" name="roleId" /></td>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">采购进度:</label></td>
+                    <td class="width-35" ><input id="jd"   type="text" name="deptId" /></td>
+                    <td  class="width-15 active">	<label class="pull-right">备注:</label></td>
+                    <td  class="width-35" >
+                        <input id="bz"   type="text" name="roleId" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <th colspan="4">阶段推进</th>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">执行阶段:</label></td>
+                    <td class="width-35" ><input id="jd0"  type="text" name="deptId" value="开标" ></td>
+                    <td  class="width-15 active">	<label class="pull-right">中标单位:</label></td>
+                    <td  class="width-35" ><input   type="text" name="roleId" value="20170208" /></td>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">中标价格:</label></td>
+                    <td class="width-35" ><input  type="text" name="deptId" /></td>
+                    <td  class="width-15 active">	<label class="pull-right">中标金额:</label></td>
+                    <td  class="width-35" ><input  type="text" name="roleId" />
+
+                    </td>
+                </tr>
+
+                <!--<tr>-->
+                    <!--<th colspan="4">参加单位</th>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td  class="width-15 active">	<label class="pull-right">单位名称:</label></td>-->
+                    <!--<td class="width-35" ><input id="jd00"  type="text" name="deptId" value="单位名称一" ></td>-->
+                    <!--<td  class="width-15 active">	<label class="pull-right">单位名称:</label></td>-->
+                    <!--<td  class="width-35" ><input id="name0"  type="text" name="roleId"  value="单位名称二"/>20170208</td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td  class="width-15 active">	<label class="pull-right">单位名称:</label></td>-->
+                    <!--<td class="width-35" ><input id="type0"  type="text" name="deptId"  value="单位名称三"  /></td>-->
+                    <!--<td  class="width-15 active">	<label class="pull-right"> 单位名称:</label></td>-->
+                    <!--<td  class="width-35" ><input id="depart0"  value="单位名称四"   type="text" name="roleId" />-->
+
+                    <!--</td>-->
+                <!--</tr>-->
+                </tbody>
+            </table>
+        </form>
+
+
+    </div>
+    <div data-options="region:'south',border:false" style="height:40px;background:#efefef;overflow: hidden;">
+        <div style="text-align:center;margin:10px;">
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" id="btnConfirm"  href="javascript:void(0)" onclick="$('#inputForm').submit();" >确定</a>
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" id="btnCancel"  href="javascript:void(0)" onclick="closeIframe()">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

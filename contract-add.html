@@ -1,0 +1,174 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>合同录入</title>
+    <link rel="stylesheet" href="js/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/bootstrap/easyui.css">
+    <link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/themes/icon.css">
+    <!--<link rel="stylesheet" type="text/css" href="js/jquery-easyui-1.5/demo/demo.css">-->
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/uploadifive-master/uploadifive.css"></script>
+    <script type="text/javascript" src="js/jquery/jQuery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="js/jquery-easyui-1.5/jquery.easyui.min.js"></script>
+    <script type="text/javascript" src="js/layer-v3/layer/layer.js"></script>
+    <script type="text/javascript" src="js/uploadifive-master/jquery.uploadifive.js"></script>
+    <script src="js/linkagesel/district-all.js"></script>
+    <script src="js/myjs.js"></script>
+
+</head>
+
+<body>
+
+
+<div class="easyui-layout" data-options="fit:true">
+    <div data-options="region:'center',border:false">
+        <form id="userAdd_form" method="post">
+            <table style="margin-bottom: 0px" class="table table-bordered  table-condensed dataTables-example dataTable no-footer">
+                <tbody>
+
+                <tr>
+                    <th colspan="4">采购单信息</th>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right"><font color="red">*</font>编号:</label></td>
+                    <td class="width-35" ><input type="text" name="userName" class="easyui-validatebox" data-options="required:true,validateOnCreate:false,validateOnBlur:true"/></td>
+                    <td  class="width-15 active">	<label class="pull-right"><font color="red">*</font>名称:</label></td>
+                    <td  class="width-35" ><input type="text" name="userLogin" class="easyui-validatebox" data-options="required:true,validateOnCreate:false,validateOnBlur:true"/></td>
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right"><font color="red">*</font>类别:</label></td>
+                    <td class="width-35" >
+                        <select class="selectpicker" >
+                            <option disabled selected value>选择类别</option>
+                            <option>类别一</option>
+                            <option>交通费</option>
+                            <option>差旅费</option>
+                            <option>水电费</option>
+                        </select>
+                    </td>
+                    <td  class="width-15 active">	<label class="pull-right">部门:</label></td>
+                    <td class="width-35" >
+                        <input  >
+                    </td>
+
+                </tr>
+                <tr>
+                    <td  class="width-15 active">	<label class="pull-right">预算:</label></td>
+                    <td class="width-35" >
+                        <input type="text" name="userTel" />
+
+                    </td>
+                    <td  class="width-15 active">	<label class="pull-right">时间:</label></td>
+                    <td class="width-35" >
+                        <input class="easyui-datebox" >
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <td  class="width-15 active"><label class="pull-right">附件:</label></td>
+                    <td  colspan="3" >
+                        <input type="file" name="file_upload" id="file_upload" />
+                    </td>
+                </tr>
+
+                <!--<tr>-->
+                    <!--<th colspan="4">采购材料明细</th>-->
+                <!--</tr>-->
+
+                </tbody>
+            </table>
+        </form>
+
+        <!--<div  class="center" data-options="region:'center',border:false" style="background:#fafafa;">-->
+            <!--<div id="toolbar0" style="height: auto;background-color: #ffffff;">-->
+                <!--<div style="padding: 3px; height:35px;">-->
+                    <!--<button id="add" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="openDia(url16)" title="新增"><i class="glyphicon glyphicon-plus"></i> 新增</button>-->
+                    <!--<button id="edit0" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="userEdit()" title="修改"><i class="glyphicon glyphicon-pencil"></i> 修改</button>-->
+                    <!--<button id="remove0" class="btn btn-white btn-sm " data-toggle="tooltip" data-placement="left" onclick="refresh()" title="删除"><i class="glyphicon glyphicon-remove"></i> 删除</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<table id="user_datagrid" class="easyui-datagrid"-->
+                   <!--data-options="-->
+    	<!--&lt;!&ndash;url: '${pageContext.request.contextPath}/demo/userAction!datagrid.action',&ndash;&gt;-->
+    	<!--fit:true,-->
+		<!--idField : 'userId',-->
+		<!--rownumbers:true,-->
+    	<!--pagination : true,-->
+		<!--pageSize : 20,-->
+		<!--pageList : [ 20, 50, 80],-->
+		<!--sortName : 'userLogin',-->
+		<!--sortOrder : 'asc',-->
+		<!--&lt;!&ndash;singleSelect: true,&ndash;&gt;-->
+		<!--nowrap : false,-->
+    	<!--border:false,-->
+    	<!--&lt;!&ndash;url:'datagrid_data2.json',&ndash;&gt;-->
+    	<!--toolbar:'#toolbar0'-->
+<!--">-->
+                <!--<thead>-->
+                <!--<tr>-->
+                    <!--<th data-options="field:'itemid',checkbox:true,align:'center'">序号</th>-->
+                    <!--<th data-options="field:'productname',width:100,align:'center'">编号</th>-->
+                    <!--<th data-options="field:'status',width:100,align:'center'">类别</th>-->
+                    <!--<th data-options="field:'attr2',width:200,align:'center'">名称</th>-->
+                    <!--<th data-options="field:'attr1',width:100,align:'center'">规格</th>-->
+                    <!--<th data-options="field:'execute',width:100,align:'center'">单价</th>-->
+                    <!--<th data-options="field:'unitcost',width:100,align:'center'">数量</th>-->
+                    <!--<th data-options="field:'unitcost',width:100,align:'center'">总结</th>-->
+                    <!--<th data-options="field:'productid',width:80,align:'center'">日期</th>-->
+                    <!--<th data-options="field:'execute',width:80,align:'center'">单价</th>-->
+                    <!--<th data-options="field:'unitcost0',width:100,align:'center'">备注</th>-->
+                    <!--&lt;!&ndash;<th>总额</th>&ndash;&gt;-->
+                <!--</tr>-->
+
+                <!--</thead>-->
+                <!--<tbody>-->
+                <!--<tr>-->
+                    <!--<td></td>-->
+                    <!--<td>201706050001</td>-->
+                    <!--<td><input type="text"  ></td>-->
+                    <!--<td><input type="text" ></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td></td>-->
+                    <!--<td>201706050002</td>-->
+                    <!--<td><input type="text"  ></td>-->
+                    <!--<td><input type="text" ></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                    <!--<td><input type="text"></td>-->
+                <!--</tr>-->
+                <!--<tr>-->
+                    <!--<td></td>-->
+                    <!--<td colspan="4">合计总金额：</td>-->
+                    <!--<td colspan="5" ><input type="text"   ></td>-->
+                <!--</tr>-->
+                <!--</tbody>-->
+            <!--</table>-->
+
+        <!--</div>-->
+
+    </div>
+    <div data-options="region:'south',border:false" style="height:40px;background:#efefef;overflow: hidden;">
+        <div style="text-align:center;margin:10px;">
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-ok'" id="btnConfirm"  href="javascript:void(0)" onclick="$('#inputForm').submit();" >确定</a>
+            <a class="easyui-linkbutton" data-options="iconCls:'icon-cancel'" id="btnCancel"  href="javascript:void(0)" onclick="closetab()">取消</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
